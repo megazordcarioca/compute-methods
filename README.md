@@ -1,2 +1,2 @@
 # compute-methods
- A three compute methods to analyse one approach for college exam of compute intelligence 1 
+ A three compute methods to analyse one approach for college exam of computational intelligence 1 
