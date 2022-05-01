@@ -5,26 +5,15 @@ from time import sleep
 class Methods:
     def main(self):
         graph = {
-        "A": ["B","E"],
-        "B": ["A","C","F"],
-        "C": ["B"],
-        "E": ["A", "I"],
-        "I": ["E","J","N"],
-        "N": ["I"],
-        "J": ["I","O"],
-        "F": ["B","G"],
-        "G": ["F","H","L"],
-        "H": ["G","D"],
-        "D": ["H"],
-        "L": ["G","M"],
-        "M": ["L", "Q"],
-        "Q": ["M","P"],
-        "P": ["Q","O","S"],
-        "O": ["J","P","R"],
-        "R": ["O"],
-        "S": ["P"]
+        "A": {"B":9,"C":5,"D":13},
+        "B": {"A":9,"E":10,"D":3},
+        "C": {"A":5,"F":12},
+        "D": {"B":3,"E":6,"G":14},
+        "E": {"B":10,"D":6,"G":7},
+        "G": {"E":7,"F":10,"D":14},
+        "F": {"G":10,"C":12},
     }
-        print("Busca profunda:")
+        print("Dijkstra")
         sleep(2)
         x=self.recursiveDepthSearch(self,graph,[],"S")
         x.reverse()
@@ -39,6 +28,11 @@ class Methods:
         print("Busca por largura:")
         print(str(self.breadthSearch(self,graph,"A")))
 
+
+    def recursiveDijkstra(self, graph,visited):
+
+            return 
+
     def recursiveDepthSearch(self,graph, visited, node):
         if node not in visited:
             visited.append(node)
@@ -50,29 +44,6 @@ class Methods:
                     visited.pop(node)
             return visited
 
-    def breadthSearch(self, graph, root):
-        visit, queue = set(),collections.deque([root])
-        visit.add(root)
-        while queue:
-            vert = queue.popleft()
-            print(("\0")+str(vert))
-            for near in graph[vert]:
-                if near not in visit:
-                    queue.append(near)
-                    visit.add(near)
-
-    def recursiveBacktracking(self,graph, nodes, cnode, visited):
-        cnode = visited if cnode is None else nodes
-        if cnode not in visited:
-            nodes = visited.append(nodes)
-            for near in graph[cnode]:
-                self.recursiveBacktracking(self,graph, near, cnode, visited)
-                if near in visited:
-                    break
-                else:
-                    visited.pop(nodes)
-            return visited
-        
 
 x=Methods
 x.main(x)
