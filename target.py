@@ -1,6 +1,5 @@
 from time import sleep
 
-
 class Methods:
 
     def main(self):
@@ -136,6 +135,7 @@ class Methods:
                 soma = matriz[i][0] + matriz[i][1]
             i = i + 1
         return soma
+
 
 
 x = Methods
