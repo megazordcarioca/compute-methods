@@ -22,44 +22,44 @@ def especialista(self):
             return
 
 
-    def perguntas(self):
-        soma = 0
-        print("Apresenta um ou mais desses casos? [s/n]")
-        print("Tosse; OU")
-        print("Dor de garganta; OU")
-        print("Coriza (nariz escorrendo);")
-        simNao = input()
-        if (simNao == 's'):
-            soma = soma + 1
-            vetor = [1]
-        elif (simNao == 'n'):
-            print("Nao se classifica como suspeito para covid-19.")
-            return
-        else:
-            print("Resposta incorreta.")
-            self.perguntas()
+def perguntas(self):
+    soma = 0
+    print("Apresenta um ou mais desses casos? [s/n]")
+    print("Tosse; OU")
+    print("Dor de garganta; OU")
+    print("Coriza (nariz escorrendo);")
+    simNao = input()
+    if (simNao == 's'):
+        soma = soma + 1
+        vetor = [1]
+    elif (simNao == 'n'):
+        print("Nao se classifica como suspeito para covid-19.")
+        return
+    else:
+        print("Resposta incorreta.")
+        self.perguntas()
 
-        print("Resposta computada.")
-        print(
-            "Responda se apresenta esses sintomas em conjunto com os anteriores.")
-        print("Dificuldade respiratoria? [s/n]")
-        if (input() == 's'):
-            soma = soma + 1
-            vetor.append(1)
-        else:
-            return
-        return vetor
+    print("Resposta computada.")
+    print(
+        "Responda se apresenta esses sintomas em conjunto com os anteriores.")
+    print("Dificuldade respiratoria? [s/n]")
+    if (input() == 's'):
+        soma = soma + 1
+        vetor.append(1)
+    else:
+        return
+    return vetor
 
 
-    def calculaSuspeito(self,vetor):
-        matriz = [
-                [0, 0], 
-                [1, 0], 
-                [1, 1], 
-                [0, 1]]
-        i = 0
-        while i < 2:
-            if ((matriz[i][0] == vetor[0]) and (matriz[i][1] == vetor[1])):
-                soma = matriz[i][0] + matriz[i][1]
-            i = i + 1
-        return soma
+def calculaSuspeito(self,vetor):
+    matriz = [
+            [0, 0], 
+            [1, 0], 
+            [1, 1], 
+            [0, 1]]
+    i = 0
+    while i < 2:
+        if ((matriz[i][0] == vetor[0]) and (matriz[i][1] == vetor[1])):
+            soma = matriz[i][0] + matriz[i][1]
+        i = i + 1
+    return soma
